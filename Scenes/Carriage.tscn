@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://b42pe8rcrgiqy"]
+
+[ext_resource type="Script" path="res://Scripts/Carriage.gd" id="1_eojme"]
+[ext_resource type="Texture2D" uid="uid://b0p35jbsbt05u" path="res://Assets/Textures/Backgrounds/train_carriage_2.png" id="1_hosys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgfa6"]
+size = Vector2(252, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4clx"]
+size = Vector2(243, 58.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbojv"]
+size = Vector2(193, 902)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8v1w"]
+size = Vector2(222, 904)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lk4s8"]
+size = Vector2(20, 36.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3b7lj"]
+size = Vector2(13, 40)
+
+[node name="Carriage" type="Node2D"]
+script = ExtResource("1_eojme")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_hosys")
+
+[node name="TopSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(68, 99)
+
+[node name="BottomSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(69, 693)
+
+[node name="NorthWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NorthWall"]
+position = Vector2(73, -1)
+shape = SubResource("RectangleShape2D_cgfa6")
+
+[node name="SouthWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SouthWall"]
+position = Vector2(66, 747)
+shape = SubResource("RectangleShape2D_n4clx")
+
+[node name="EastWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EastWall"]
+position = Vector2(229, 362)
+shape = SubResource("RectangleShape2D_wbojv")
+
+[node name="WestWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WestWall"]
+position = Vector2(-110, 353)
+shape = SubResource("RectangleShape2D_a8v1w")
+
+[node name="TopDoor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor"]
+position = Vector2(66, 56)
+shape = SubResource("RectangleShape2D_lk4s8")
+
+[node name="BottomDoor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomDoor"]
+position = Vector2(68, 731)
+shape = SubResource("RectangleShape2D_3b7lj")
+
+[connection signal="body_entered" from="TopDoor" to="." method="_on_top_door_body_entered"]
+[connection signal="body_entered" from="BottomDoor" to="." method="_on_bottom_door_body_entered"]

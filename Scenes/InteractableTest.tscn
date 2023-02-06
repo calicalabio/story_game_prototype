@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7566oqm47dlr"]
+
+[ext_resource type="Script" path="res://Scripts/InteractableTest.gd" id="1_1wg3l"]
+[ext_resource type="Texture2D" uid="uid://doe04hp80itrf" path="res://icon.svg" id="1_x32t1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf321"]
+size = Vector2(64, 64)
+
+[node name="InteractableTest" type="StaticBody2D" groups=["interactable"]]
+script = ExtResource("1_1wg3l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_x32t1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_xf321")

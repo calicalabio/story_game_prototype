@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmhrxrmcd63lq"]
+
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_lhids"]
+[ext_resource type="PackedScene" uid="uid://bicnqceejk35h" path="res://Scenes/Dialogue.tscn" id="1_wueqr"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_lhids")
+
+[node name="Dialogue" parent="." instance=ExtResource("1_wueqr")]
+visible = false
+offset_left = 20.0
+offset_top = 226.0
+offset_right = 20.0
+offset_bottom = 226.0

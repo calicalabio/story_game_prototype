@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddb33sks0hm4w"]
+
+[ext_resource type="Script" path="res://Scripts/Interactor.gd" id="1_jkxy0"]
+[ext_resource type="Texture2D" uid="uid://c5f66cpkjj15w" path="res://Assets/Textures/Backgrounds/checkered.jpg" id="1_ynht2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14tsy"]
+size = Vector2(2.3125, 13)
+
+[node name="Interactor" type="Marker2D"]
+script = ExtResource("1_jkxy0")
+
+[node name="Area2D" type="Area2D" parent="." groups=["interactor"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.15625, 8.5)
+shape = SubResource("RectangleShape2D_14tsy")
+
+[node name="TestDisplay" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 10)
+scale = Vector2(0.005, 0.015)
+texture = ExtResource("1_ynht2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

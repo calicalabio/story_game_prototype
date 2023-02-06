@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2h23kc0hhoyh"]
+
+[ext_resource type="PackedScene" uid="uid://b42pe8rcrgiqy" path="res://Scenes/Carriage.tscn" id="1_besiy"]
+[ext_resource type="Script" path="res://Scripts/PrototypeLevel2.gd" id="1_kjgeb"]
+[ext_resource type="PackedScene" uid="uid://b06cqd72p1dw1" path="res://Scenes/Player.tscn" id="3_qcyjd"]
+[ext_resource type="PackedScene" uid="uid://t15xbcbh3eo3" path="res://Scenes/PlayerCam.tscn" id="4_cxai0"]
+
+[node name="PrototypeLevel2" type="Node2D"]
+script = ExtResource("1_kjgeb")
+
+[node name="Carriage" parent="." instance=ExtResource("1_besiy")]
+
+[node name="Player" parent="." instance=ExtResource("3_qcyjd")]
+
+[node name="PlayerCam" parent="." instance=ExtResource("4_cxai0")]

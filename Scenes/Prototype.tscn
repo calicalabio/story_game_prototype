@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://sgyg4ovl6xx6"]
+
+[ext_resource type="Script" path="res://Scripts/Prototype.gd" id="1_mtgki"]
+[ext_resource type="Texture2D" uid="uid://b5dkwx1c0vd6a" path="res://Assets/Textures/Backgrounds/black.png" id="2_2jxij"]
+[ext_resource type="PackedScene" uid="uid://b06cqd72p1dw1" path="res://Scenes/Player.tscn" id="2_n3xue"]
+[ext_resource type="PackedScene" uid="uid://b42pe8rcrgiqy" path="res://Scenes/Carriage.tscn" id="3_asg60"]
+[ext_resource type="PackedScene" uid="uid://t15xbcbh3eo3" path="res://Scenes/PlayerCam.tscn" id="5_8mulv"]
+[ext_resource type="PackedScene" uid="uid://c7566oqm47dlr" path="res://Scenes/InteractableTest.tscn" id="6_h4d8v"]
+
+[node name="Prototype" type="Node2D"]
+script = ExtResource("1_mtgki")
+
+[node name="Black" type="TextureRect" parent="."]
+offset_left = -454.0
+offset_top = -716.0
+offset_right = 1146.0
+offset_bottom = 884.0
+texture = ExtResource("2_2jxij")
+
+[node name="Carriage" parent="." instance=ExtResource("3_asg60")]
+
+[node name="Player" parent="." instance=ExtResource("2_n3xue")]
+position = Vector2(194, 146)
+
+[node name="PlayerCam" parent="." instance=ExtResource("5_8mulv")]
+
+[node name="InteractableTest" parent="." instance=ExtResource("6_h4d8v")]
+position = Vector2(3, 320)

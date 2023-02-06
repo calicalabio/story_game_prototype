@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://t15xbcbh3eo3"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerCam.gd" id="1_6esn2"]
+
+[node name="PlayerCam" type="Node2D"]
+script = ExtResource("1_6esn2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="BumpTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="BumpTimer" to="." method="_on_bump_timer_timeout"]
