@@ -3,6 +3,7 @@
 This is a prototype game project used for implementing story-based game mechanics from scratch. This will be used as a base for a full game.
 
 Project goals:
+- Implement custom 'on-rails' camera (COMPLETE)
 - Implement a flexible character dialogue system from scratch (COMPLETE)
 - Implement room/level transitions (COMPLETE)
 - Implement player character with movement and interaction mechanics (COMPLETE)
